@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="input">
+    <button onclick="show()">Show</button>
+    <div id="display"></div>
+  
+</body>
+</html>
+<script>
+  function show(params) {
+    let inputValue = document.getElementById('input').value 
+    if (inputValue !== '') {
+        let newDiv = document.createElement('div')
+        newDiv.innerHTML = `${inputValue} <button onclick="cancel(this)">x</button>` 
+        document.getElementById('display').appendChild(newDiv)
+        inputValue = ''
+    }
+  }
+  function cancel(button) {
+     button.parentElement.remove()
+    
+  }
+  
+
+    const ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]
+    let sortAge = ages.sort()
+    console.log(sortAge)
+    let min = sortAge[0]
+    let max = sortAge[9]
+    console.log(`min: ${min}, max: ${max}`);
+    let medianAge = (sortAge[4] + sortAge[5]) / 2
+    console.log(medianAge);
+    let averageAge = (sortAge[0] + sortAge[1] + sortAge[2] + sortAge[3] + sortAge[4] + sortAge[5] + sortAge[6] + sortAge[7] + sortAge[8] + sortAge[9]) / sortAge.length
+    console.log(averageAge);
+    let range = max - min
+    console.log(range);
+    let comp1 = min - averageAge
+    let comp2 = max - averageAge
+    console.log(`comparism between minMax is ${Math.abs(comp1.toFixed(1))} and ${comp2.toFixed(1)}`);
+    
+
+
+</script>
